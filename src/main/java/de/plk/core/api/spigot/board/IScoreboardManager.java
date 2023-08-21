@@ -1,5 +1,6 @@
 package de.plk.core.api.spigot.board;
 
+import de.plk.core.api.spigot.board.team.IScoreboardTeam;
 import de.plk.core.api.utils.IManager;
 import org.bukkit.entity.Player;
 
@@ -32,5 +33,12 @@ public interface IScoreboardManager extends IManager<IScoreboard> {
      * @param player The player.
      */
     void clearScoreboard(Player player);
+
+    /**
+     * Get the scoreboard team manager.
+     *
+     * @return The scoreboard team manager.
+     */
+    public IManager<IScoreboardTeam> getScoreboardTeamManager();
 
 }
