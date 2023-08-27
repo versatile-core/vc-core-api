@@ -9,7 +9,7 @@ import de.plk.core.api.spigot.skin.ISkin;
  * @since 06.08.2023 00:48
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface ISpicyPlayer<T> extends IModel {
+public interface IVersatilePlayer<T> extends IModel {
 
     /**
      * The game player.

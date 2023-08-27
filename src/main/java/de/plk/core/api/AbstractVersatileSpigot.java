@@ -2,15 +2,17 @@ package de.plk.core.api;
 
 import de.plk.core.api.plugin.IInstance;
 import de.plk.core.api.plugin.IPluginCore;
-import net.md_5.bungee.api.plugin.Plugin;
-import net.md_5.bungee.api.plugin.PluginManager;
+import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * @author SoftwareBuilds
- * @since 05.08.2023 22:39
+ * @since 05.08.2023 22:36
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public abstract class AbstractSpicyProxy extends Plugin {
+public abstract class AbstractVersatileSpigot extends JavaPlugin {
 
     /**
      * The plugin core.
@@ -22,11 +24,11 @@ public abstract class AbstractSpicyProxy extends Plugin {
      */
     @Override
     public void onEnable() {
-        PluginManager pluginManager = getProxy().getPluginManager();
+        PluginManager pluginManager = Bukkit.getPluginManager();
         Plugin plugin = pluginManager.getPlugin("core");
 
         if (plugin instanceof IInstance) {
-            IInstance<Plugin> instance = (IInstance<Plugin>) plugin;
+            IInstance<JavaPlugin> instance = (IInstance<JavaPlugin>) plugin;
             pluginCore = instance.createPluginCore(this);
         }
     }
@@ -39,5 +41,4 @@ public abstract class AbstractSpicyProxy extends Plugin {
     public static IPluginCore getInstance() {
         return pluginCore;
     }
-
 }
