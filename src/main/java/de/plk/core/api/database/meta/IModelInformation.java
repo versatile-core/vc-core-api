@@ -26,6 +26,13 @@ public interface IModelInformation {
      */
     Set<Relation> getRelations();
 
-    Field getFieldFromRelation();
+    /**
+     * Get field from relation.
+     *
+     * @param relation The relation.
+     *
+     * @return The field of relation.
+     */
+    Field getFieldFromRelation(Relation relation);
 
 }

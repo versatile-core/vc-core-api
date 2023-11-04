@@ -1,5 +1,7 @@
 package de.plk.core.api.database.meta;
 
+import de.plk.core.api.database.IModel;
+
 /**
  * @author SoftwareBuilds
  * @since 06.08.2023 15:33
@@ -12,7 +14,7 @@ public @interface Relation {
      *
      * @return Foreign table name.
      */
-    Table foreignTable();
+    Class<? extends IModel> foreignModel();
 
     /**
      * The foreign key column name.

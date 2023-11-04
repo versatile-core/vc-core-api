@@ -60,18 +60,6 @@ public interface IQueryBuilder<M extends IModel> {
     <V> IQueryBuilder<M> andWhere(Column column, Operand operand, V needle);
 
     /**
-     * Add a relation the query.
-     *
-     * @param queryBuilder The related query model builder.
-     * @param relation     The relation information from the model.
-     *
-     * @return The query builder.
-     *
-     * @param <O> The related model type.
-     */
-    <O extends IModel> IQueryBuilder<M> getRelatedModel(IQueryBuilder<O> queryBuilder, Relation relation);
-
-    /**
      * Build the model query.
      *
      * @return Model query.
