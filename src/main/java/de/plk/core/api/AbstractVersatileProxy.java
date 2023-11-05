@@ -33,22 +33,6 @@ public abstract class AbstractVersatileProxy extends Plugin {
             IInstance<Plugin> instance = (IInstance<Plugin>) plugin;
             pluginCore = instance.createPluginCore(this);
         }
-
-        ITaskManager taskManager = getInstance().getTaskManager();
-        IRepeatingTask task = taskManager.createRepeatingTask("Test", 0 , 20);
-        task.taskExecutionContent((counter -> {
-            if (counter.currentCounter() == 0) {
-
-            }
-        }));
-        task.start();
-
-        ITaskManager taskManager2 = getInstance().getTaskManager();
-        IDelayedTask task2 = taskManager2.createDelayedTask("Test", 20);
-        task2.taskExecutionContent(() -> {
-
-        });
-        task2.start();
     }
 
     /**
