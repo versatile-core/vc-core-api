@@ -11,10 +11,25 @@ import de.plk.core.api.utils.IManager;
  */
 public interface ITaskManager extends IManager<ITaskIdentifier> {
 
-    ITaskIdentifier loadTask();
+    /**
+     * Creates a delayed task.
+     *
+     * @param taskName The registration name for the task.
+     * @param delayedTicks The delayed ticks of the task.
+     *
+     * @return The delayed task.
+     */
+    IDelayedTask createDelayedTask(String taskName, long delayedTicks);
 
-    IDelayedTask createDelayedTask(String taskName);
-
-    IRepeatingTask createRepeatingTask(String taskName);
+    /**
+     * Creates a repeating task.
+     *
+     * @param taskName The registration name for the task.
+     * @param delayedTicks The delayed ticks of the task.
+     * @param repeatingTicks The repeating ticks of the task.
+     *
+     * @return The repeating task.
+     */
+    IRepeatingTask createRepeatingTask(String taskName, long delayedTicks, long repeatingTicks);
 
 }

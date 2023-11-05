@@ -8,6 +8,7 @@ import de.plk.core.api.log.ILogger;
 import de.plk.core.api.spigot.board.IScoreboardManager;
 import de.plk.core.api.spigot.game.IGame;
 import de.plk.core.api.spigot.inventory.IInventoryManager;
+import de.plk.core.api.task.ITaskManager;
 import de.plk.core.api.utils.IManager;
 
 /**
@@ -74,5 +75,7 @@ public interface IPluginCore {
      * @return The inventory manager.
      */
     IInventoryManager getInventoryManager();
+
+    ITaskManager getTaskManager();
 
 }

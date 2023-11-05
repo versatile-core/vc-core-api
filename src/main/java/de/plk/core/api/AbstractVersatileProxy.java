@@ -2,6 +2,10 @@ package de.plk.core.api;
 
 import de.plk.core.api.plugin.IInstance;
 import de.plk.core.api.plugin.IPluginCore;
+import de.plk.core.api.task.ITaskManager;
+import de.plk.core.api.task.delayed.IDelayedTask;
+import de.plk.core.api.task.repeat.IRepeatCounter;
+import de.plk.core.api.task.repeat.IRepeatingTask;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;
 
@@ -29,6 +33,22 @@ public abstract class AbstractVersatileProxy extends Plugin {
             IInstance<Plugin> instance = (IInstance<Plugin>) plugin;
             pluginCore = instance.createPluginCore(this);
         }
+
+        ITaskManager taskManager = getInstance().getTaskManager();
+        IRepeatingTask task = taskManager.createRepeatingTask("Test", 0 , 20);
+        task.taskExecutionContent((counter -> {
+            if (counter.currentCounter() == 0) {
+
+            }
+        }));
+        task.start();
+
+        ITaskManager taskManager2 = getInstance().getTaskManager();
+        IDelayedTask task2 = taskManager2.createDelayedTask("Test", 20);
+        task2.taskExecutionContent(() -> {
+
+        });
+        task2.start();
     }
 
     /**

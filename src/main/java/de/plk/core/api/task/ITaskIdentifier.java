@@ -1,5 +1,7 @@
 package de.plk.core.api.task;
 
+import org.bukkit.scheduler.BukkitTask;
+
 /**
  * @author SoftwareBuilds
  * @since 05.11.2023 18:00
@@ -7,8 +9,18 @@ package de.plk.core.api.task;
  */
 public interface ITaskIdentifier {
 
+    /**
+     * The registered name of the task.
+     *
+     * @return The registration name.
+     */
     String getTaskName();
 
-    int getTaskId();
+    /**
+     * Get the task.
+     *
+     * @return The task.
+     */
+    BukkitTask getTask();
 
 }

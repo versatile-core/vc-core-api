@@ -1,6 +1,6 @@
 package de.plk.core.api.task.delayed;
 
-import de.plk.core.api.task.ITaskExecutor;
+import de.plk.core.api.task.ITask;
 import de.plk.core.api.task.ITaskIdentifier;
 
 /**
@@ -8,10 +8,20 @@ import de.plk.core.api.task.ITaskIdentifier;
  * @since 05.11.2023 17:41
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IDelayedTask extends ITaskIdentifier, ITaskExecutor<IDelayedTask> {
+public interface IDelayedTask extends ITask<Runnable>, ITaskIdentifier {
 
+    /**
+     * Get the delayed ticks for the scheduler.
+     *
+     * @return The delayed ticks.
+     */
     long getDelayedTicks();
 
-    long setDelayedTicks(long ticks);
+    /**
+     * Set the delayed ticks for the scheduler.
+     *
+     * @param ticks The delayed ticks.
+     */
+    void setDelayedTicks(long ticks);
 
 }

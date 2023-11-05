@@ -1,6 +1,6 @@
 package de.plk.core.api.task.repeat;
 
-import de.plk.core.api.task.ITaskExecutor;
+import de.plk.core.api.task.ITask;
 import de.plk.core.api.task.ITaskIdentifier;
 
 /**
@@ -8,14 +8,48 @@ import de.plk.core.api.task.ITaskIdentifier;
  * @since 05.11.2023 17:41
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IRepeatingTask extends ITaskIdentifier, IRepeatCount, ITaskExecutor<IRepeatingTask> {
+public interface IRepeatingTask extends ITask<IRepeatingRunnable>, ITaskIdentifier {
 
+    /**
+     * Get the delayed ticks for the scheduler.
+     *
+     * @return The delayed ticks.
+     */
     long getDelayedTicks();
 
-    long setDelayedTicks(long ticks);
+    /**
+     * Set the delayed ticks for the scheduler.
+     *
+     * @param ticks The delayed ticks.
+     */
+    void setDelayedTicks(long ticks);
 
-    long getRepeatingTask();
+    /**
+     * Get the repeating ticks for the scheduler.
+     *
+     * @return The repeating ticks.
+     */
+    long getRepeatingTicks();
 
-    long setRepeatingTask(long ticks);
+    /**
+     * Set the repeating ticks for the scheduler.
+     *
+     * @param ticks The repeating ticks.
+     */
+    void setRepeatingTicks(long ticks);
+
+    /**
+     * Creates a repeating counter.
+     */
+    void createRepeatingCounter();
+
+    /**
+     * Creates a repeating counter.
+     *
+     * @see #createRepeatingCounter()
+     *
+     * @param begin The beginning of the counter.
+     */
+    void createRepeatingCounter(int begin);
 
 }
