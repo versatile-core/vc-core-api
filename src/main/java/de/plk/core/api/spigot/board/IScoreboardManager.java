@@ -39,6 +39,6 @@ public interface IScoreboardManager extends IManager<IScoreboard> {
      *
      * @return The scoreboard team manager.
      */
-    public IManager<IScoreboardTeam> getScoreboardTeamManager();
+    IManager<IScoreboardTeam> getScoreboardTeamManager();
 
 }

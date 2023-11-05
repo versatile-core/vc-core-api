@@ -9,14 +9,25 @@ import java.util.function.Predicate;
  */
 public class InventoryByIdFilter implements Predicate<IInventory> {
 
-    private final String identifier;
+    /**
+     * The inventory identifier to test for.
+     */
+    private final String inventoryIdentifier;
 
-    public InventoryByIdFilter(String identifier) {
-        this.identifier = identifier;
+    /**
+     * Construct an inventory identifier predicate test.
+     *
+     * @param inventoryIdentifier The inventory identifier.
+     */
+    public InventoryByIdFilter(String inventoryIdentifier) {
+        this.inventoryIdentifier = inventoryIdentifier;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean test(IInventory inventory) {
-        return inventory.getInventoryIdentifier().equals(identifier);
+        return inventory.getInventoryIdentifier().equals(inventoryIdentifier);
     }
 }

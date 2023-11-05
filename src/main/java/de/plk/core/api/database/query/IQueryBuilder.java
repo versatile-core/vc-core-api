@@ -2,7 +2,6 @@ package de.plk.core.api.database.query;
 
 import de.plk.core.api.database.IModel;
 import de.plk.core.api.database.meta.Column;
-import de.plk.core.api.database.meta.Relation;
 
 /**
  * @author SoftwareBuilds

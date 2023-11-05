@@ -32,8 +32,6 @@ public interface IGame {
      */
     Set<IGameState> getGameStates();
 
-    void loadGameStates();
-
     /**
      * Sets the current game state.
      *
