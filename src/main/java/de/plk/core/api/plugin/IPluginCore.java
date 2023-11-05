@@ -76,6 +76,11 @@ public interface IPluginCore {
      */
     IInventoryManager getInventoryManager();
 
+    /**
+     * Get the task manager.
+     *
+     * @return The task manager.
+     */
     ITaskManager getTaskManager();
 
 }
