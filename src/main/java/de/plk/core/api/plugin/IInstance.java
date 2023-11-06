@@ -8,7 +8,7 @@ package de.plk.core.api.plugin;
 public interface IInstance<P> {
 
     /**
-     * Wrapp the instance of plugin core to another plugin.
+     * Wrap the instance of plugin core to another plugin.
      *
      * @param plugin The other plugin.
      *

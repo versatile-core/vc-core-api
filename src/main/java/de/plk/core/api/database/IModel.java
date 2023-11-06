@@ -5,7 +5,6 @@ import de.plk.core.api.database.meta.IModelInformation;
 import de.plk.core.api.database.meta.Relation;
 import de.plk.core.api.database.meta.Table;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -31,7 +30,7 @@ public interface IModel {
                 Set<Column> columns = new HashSet<>();
 
                 if (modelClass.isAnnotationPresent(Column.class)) {
-                    Arrays.stream(modelClass.getAnnotationsByType(Column.class)).forEach(columns::add);
+                    columns.addAll(Arrays.asList(modelClass.getAnnotationsByType(Column.class)));
                 }
 
                 return columns;
@@ -50,7 +49,7 @@ public interface IModel {
                 Set<Relation> relations = new HashSet<>();
 
                 if (modelClass.isAnnotationPresent(Relation.class)) {
-                    Arrays.stream(modelClass.getAnnotationsByType(Relation.class)).forEach(relations::add);
+                    relations.addAll(Arrays.asList(modelClass.getAnnotationsByType(Relation.class)));
                 }
 
                 return relations;
