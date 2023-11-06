@@ -2,10 +2,6 @@ package de.plk.core.api;
 
 import de.plk.core.api.plugin.IInstance;
 import de.plk.core.api.plugin.IPluginCore;
-import de.plk.core.api.task.ITaskManager;
-import de.plk.core.api.task.delayed.IDelayedTask;
-import de.plk.core.api.task.repeat.IRepeatCounter;
-import de.plk.core.api.task.repeat.IRepeatingTask;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;
 
