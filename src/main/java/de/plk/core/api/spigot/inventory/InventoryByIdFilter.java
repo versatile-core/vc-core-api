@@ -30,4 +30,5 @@ public class InventoryByIdFilter implements Predicate<IInventory> {
     public boolean test(IInventory inventory) {
         return inventory.getInventoryIdentifier().equals(inventoryIdentifier);
     }
+
 }

@@ -30,4 +30,5 @@ public class TeamIdentifierFilter implements Predicate<IScoreboardTeam> {
     public boolean test(IScoreboardTeam scoreboardTeam) {
         return scoreboardTeam.getTeamIdentifier().equals(teamIdentifier);
     }
+
 }

@@ -25,6 +25,9 @@ public interface IModel {
     static IModelInformation getModelInformation(Class<? extends IModel> modelClass) {
         return new IModelInformation() {
 
+            /**
+             * {@inheritDoc}
+             */
             @Override
             public Set<Column> getColumns() {
                 Set<Column> columns = new HashSet<>();
@@ -36,6 +39,9 @@ public interface IModel {
                 return columns;
             }
 
+            /**
+             * {@inheritDoc}
+             */
             @Override
             public Table getTable() {
                 if (modelClass.isAnnotationPresent(Table.class))
@@ -44,6 +50,9 @@ public interface IModel {
                 return null;
             }
 
+            /**
+             * {@inheritDoc}
+             */
             @Override
             public Set<Relation> getRelations() {
                 Set<Relation> relations = new HashSet<>();
@@ -55,13 +64,16 @@ public interface IModel {
                 return relations;
             }
 
+            /**
+             * {@inheritDoc}
+             */
             @Override
             public Field getFieldFromRelation(Relation relation) {
                 for (Field declaredField : modelClass.getDeclaredFields()) {
                     if (declaredField.isAnnotationPresent(Relation.class)) {
-                        Relation fieldAnnotation = declaredField.getAnnotation(Relation.class);
+                        Relation annotationField = declaredField.getAnnotation(Relation.class);
 
-                        if (fieldAnnotation == relation) {
+                        if (annotationField == relation) {
                             return declaredField;
                         }
                     }

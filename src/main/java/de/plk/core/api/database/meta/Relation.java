@@ -2,14 +2,17 @@ package de.plk.core.api.database.meta;
 
 import de.plk.core.api.database.IModel;
 
+import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * @author SoftwareBuilds
  * @since 06.08.2023 15:33
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Relation {
 
@@ -34,7 +37,25 @@ public @interface Relation {
      */
     RelationType relationType();
 
+    /**
+     * Set the logical relation type to another table.
+     */
     enum RelationType {
-        ONE_TO_ONE, ONE_TO_MANY, MANY_TO_MANY
+
+        /**
+         * Defines that a table references another table.
+         */
+        ONE_TO_ONE,
+
+        /**
+         * Defines that a table references several other tables.
+         */
+        ONE_TO_MANY,
+
+        /**
+         * Defines that several tables are referenced to several tables.
+         */
+        MANY_TO_MANY
     }
+
 }

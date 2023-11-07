@@ -7,6 +7,19 @@ package de.plk.core.api.log;
  */
 public enum LogType {
 
-    INFO, WARNING, ERROR
+    /**
+     * Log type for info messages.
+     */
+    INFO,
+
+    /**
+     * Log type for warning messages.
+     */
+    WARNING,
+
+    /**
+     * Log type for error messages.
+     */
+    ERROR
 
 }

@@ -9,9 +9,9 @@ package de.plk.core.api.spigot.board;
 public interface IRow {
 
     /**
-     * The value in the row.
+     * Get the value in the row.
      *
-     * @return The value.
+     * @return The value in the row.
      */
     String getValue();
 

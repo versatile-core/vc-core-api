@@ -56,6 +56,9 @@ public @interface CommandInfo {
      */
     int maxArgs() default 0;
 
+    /**
+     * The enum to specify the platform version for the command.
+     */
     enum CommandVersion {
         BUNGEECORD, SPIGOT
     }

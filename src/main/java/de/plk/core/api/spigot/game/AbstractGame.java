@@ -60,4 +60,5 @@ public abstract class AbstractGame implements IGame {
             currentGameState = null;
         }
     }
+
 }

@@ -20,11 +20,12 @@ public abstract class AbstractCommand<E> {
     /**
      * Wraps the spicy command with restrictions.
      *
-     * @see #onSpicyCommand(Object, String[])
+     * @see #onSpicyCommand(Object, String[]).
      */
     public boolean executeCommand(E executor, String[] args) {
         final CommandInfo commandInfo = getCommandInfo();
 
+        // Checks whether the arguments fit within the limits of the specified command length.
         if (args.length >= commandInfo.minArgs() && args.length <= commandInfo.maxArgs()) {
             return onSpicyCommand(executor, args);
         } else {
@@ -55,4 +56,5 @@ public abstract class AbstractCommand<E> {
      * Register the command to the plugin.
      */
     public abstract void register();
+
 }

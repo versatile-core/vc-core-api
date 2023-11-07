@@ -41,7 +41,7 @@ public class ItemBuilder {
     /**
      * Creates an item builder.
      *
-     * @see #ItemBuilder(Material, int)
+     * @see #ItemBuilder(Material, int).
      *
      * @param material The item material.
      */
@@ -138,7 +138,7 @@ public class ItemBuilder {
      * @return The item builder.
      */
     public ItemBuilder setMaterialData(MaterialData materialData) {
-        this.setMaterialData(materialData);
+        this.itemStack.setData(materialData);
         return this;
     }
 
@@ -169,7 +169,7 @@ public class ItemBuilder {
     /**
      * Set the clickable item name.
      *
-     * @see #build()
+     * @see #build().
      *
      * @param clickEvent The click event.
      *
@@ -178,11 +178,17 @@ public class ItemBuilder {
     public IClickableItem build(IClickEvent clickEvent) {
         return new IClickableItem() {
 
+            /**
+             * {@inheritDoc}
+             */
             @Override
             public IClickEvent getClickEvent() {
                 return clickEvent;
             }
 
+            /**
+             * {@inheritDoc}
+             */
             @Override
             public ItemStack getItemStack() {
                 return build().getItemStack();
@@ -199,4 +205,5 @@ public class ItemBuilder {
         itemStack.setItemMeta(itemMeta);
         return () -> itemStack;
     }
+
 }

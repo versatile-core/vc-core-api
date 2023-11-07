@@ -34,4 +34,5 @@ public interface IRepeatCounter {
      * @param count The value to decrement.
      */
     void decrement(int count);
+
 }

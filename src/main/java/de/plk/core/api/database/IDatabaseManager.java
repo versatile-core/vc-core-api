@@ -50,7 +50,7 @@ public interface IDatabaseManager {
     /**
      * Run an asynchronized query.
      * 
-     * @see #runSync(IQuery)
+     * @see #runSync(IQuery).
      * 
      * @param query The query.
      * 

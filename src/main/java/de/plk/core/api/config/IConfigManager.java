@@ -22,7 +22,7 @@ public interface IConfigManager<T> {
     /**
      * Loads a configuration specific to a type async.
      *
-     * @see #loadConfiguration(File)
+     * @see #loadConfiguration(File).
      *
      * @param file The file.
      *
@@ -45,7 +45,7 @@ public interface IConfigManager<T> {
     /**
      * Save a configuration specific to a type async.
      *
-     * @see #saveConfiguration(IConfig, File)
+     * @see #saveConfiguration(IConfig, File).
      *
      * @param file The file.
      *

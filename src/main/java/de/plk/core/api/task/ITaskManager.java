@@ -24,8 +24,8 @@ public interface ITaskManager extends IManager<ITaskIdentifier> {
     /**
      * Creates a repeating task.
      *
-     * @param taskName The registration name for the task.
-     * @param delayedTicks The delayed ticks of the task.
+     * @param taskName       The registration name for the task.
+     * @param delayedTicks   The delayed ticks of the task.
      * @param repeatingTicks The repeating ticks of the task.
      *
      * @return The repeating task.

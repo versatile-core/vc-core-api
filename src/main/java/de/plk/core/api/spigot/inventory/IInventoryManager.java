@@ -4,6 +4,8 @@ import de.plk.core.api.utils.IManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
+import java.util.Map;
+
 /**
  * @author SoftwareBuilds
  * @since 06.08.2023 20:22
@@ -40,5 +42,12 @@ public interface IInventoryManager extends IManager<IInventory> {
      * @return The inventory listener.
      */
     Listener getInventoryListener();
+
+    /**
+     * Get all the registered active inventories.
+     *
+     * @return All registered active inventories.
+     */
+    Map<Player, IInventory> getAllActiveInventories();
 
 }

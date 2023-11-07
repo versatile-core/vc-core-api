@@ -7,6 +7,24 @@ package de.plk.core.api.database.query;
  */
 public enum CommandType {
 
-    SELECT, DELETE, INSERT, UPDATE
+    /**
+     * Specifies that the query is a select manipulation.
+     */
+    SELECT,
+
+    /**
+     * Specifies that the query is a delete manipulation.
+     */
+    DELETE,
+
+    /**
+     * Specifies that the query is an insert manipulation.
+     */
+    INSERT,
+
+    /**
+     * Specifies that the query is an update manipulation.
+     */
+    UPDATE
 
 }

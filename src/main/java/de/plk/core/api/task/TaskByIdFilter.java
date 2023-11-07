@@ -30,4 +30,5 @@ public class TaskByIdFilter implements Predicate<ITaskIdentifier> {
     public boolean test(ITaskIdentifier task) {
         return task.getTaskName().equals(taskIdentifier);
     }
+
 }

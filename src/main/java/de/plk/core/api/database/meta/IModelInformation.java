@@ -3,6 +3,11 @@ package de.plk.core.api.database.meta;
 import java.lang.reflect.Field;
 import java.util.Set;
 
+/**
+ * @author SoftwareBuilds
+ * @since 06.08.2023 15:34
+ * Copyright © 2023 | SoftwareBuilds | All rights reserved.
+ */
 public interface IModelInformation {
 
     /**

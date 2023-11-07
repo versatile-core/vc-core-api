@@ -41,4 +41,5 @@ public interface ILogger {
     default void error(String message) {
         log(LogType.ERROR, message);
     }
+
 }

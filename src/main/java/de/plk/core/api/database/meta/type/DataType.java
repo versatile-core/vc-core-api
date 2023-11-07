@@ -7,6 +7,19 @@ package de.plk.core.api.database.meta.type;
  */
 public enum DataType {
 
-    TEXT, VARCHAR, INT
+    /**
+     * Column data type text.
+     */
+    TEXT,
+
+    /**
+     * Column data type varchar.
+     */
+    VARCHAR,
+
+    /**
+     * Column data type integer.
+     */
+    INT
 
 }

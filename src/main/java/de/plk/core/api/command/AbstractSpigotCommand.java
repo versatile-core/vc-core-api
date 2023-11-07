@@ -32,4 +32,5 @@ public abstract class AbstractSpigotCommand extends AbstractCommand<CommandSende
                 (commandSender, command, s, strings) -> executeCommand(commandSender, strings)
         );
     }
+
 }

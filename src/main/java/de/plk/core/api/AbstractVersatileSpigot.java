@@ -41,4 +41,5 @@ public abstract class AbstractVersatileSpigot extends JavaPlugin {
     public static IPluginCore getInstance() {
         return pluginCore;
     }
+
 }

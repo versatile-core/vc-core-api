@@ -46,7 +46,7 @@ public interface IRepeatingTask extends ITask<IRepeatingRunnable>, ITaskIdentifi
     /**
      * Creates a repeating counter.
      *
-     * @see #createRepeatingCounter()
+     * @see #createRepeatingCounter().
      *
      * @param begin The beginning of the counter.
      */

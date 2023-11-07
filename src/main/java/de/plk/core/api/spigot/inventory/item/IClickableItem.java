@@ -8,7 +8,7 @@ package de.plk.core.api.spigot.inventory.item;
 public interface IClickableItem extends IItem {
 
     /**
-     * The click event of the item.
+     * Get the click event of the item.
      */
     IClickEvent getClickEvent();
 

@@ -33,9 +33,9 @@ public interface IScoreboardTeam extends IRow, Listener {
     String getSuffix();
 
     /**
-     * The update entry.
+     * Get the entry as non see entry.
      *
-     * @return The entry cc.
+     * @return The entry as non see entry.
      */
     ChatColor getEntry();
 }

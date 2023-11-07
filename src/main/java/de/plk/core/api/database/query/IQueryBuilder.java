@@ -66,7 +66,41 @@ public interface IQueryBuilder<M extends IModel> {
     IQuery<M> build();
 
     enum Operand {
-        EQUAL, NON_EQUAL, GREATER, GREATHR_THAN, SMALLER, SMALLER_THAN, LIKE
+
+        /**
+         * Uses for equality check.
+         */
+        EQUAL,
+
+        /**
+         * Uses for non equality check.
+         */
+        NON_EQUAL,
+
+        /**
+         * Uses for greater check.
+         */
+        GREATER,
+
+        /**
+         * Uses for greater than check.
+         */
+        GREATER_THAN,
+
+        /**
+         * Uses for smaller check.
+         */
+        SMALLER,
+
+        /**
+         * Uses for smaller than check.
+         */
+        SMALLER_THAN,
+
+        /**
+         * Uses for like check.
+         */
+        LIKE
     }
 
 }
