@@ -38,4 +38,5 @@ public interface IScoreboardTeam extends IRow, Listener {
      * @return The entry as non see entry.
      */
     ChatColor getEntry();
+
 }
