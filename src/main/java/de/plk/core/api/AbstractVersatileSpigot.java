@@ -1,7 +1,7 @@
 package de.plk.core.api;
 
-import de.plk.core.api.plugin.IInstance;
-import de.plk.core.api.plugin.IPluginCore;
+import de.plk.core.api.plugin.IInstanceSpigot;
+import de.plk.core.api.plugin.ISpigotPluginCore;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -17,7 +17,7 @@ public abstract class AbstractVersatileSpigot extends JavaPlugin {
     /**
      * The plugin core.
      */
-    private static IPluginCore pluginCore;
+    private static ISpigotPluginCore pluginCore;
 
     /**
      * {@inheritDoc}
@@ -27,8 +27,7 @@ public abstract class AbstractVersatileSpigot extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
         Plugin plugin = pluginManager.getPlugin("core");
 
-        if (plugin instanceof IInstance) {
-            IInstance<JavaPlugin> instance = (IInstance<JavaPlugin>) plugin;
+        if (plugin instanceof IInstanceSpigot instance) {
             pluginCore = instance.createPluginCore(this);
         }
     }
@@ -38,7 +37,7 @@ public abstract class AbstractVersatileSpigot extends JavaPlugin {
      *
      * @return The instance of core plugin.
      */
-    public static IPluginCore getInstance() {
+    public static ISpigotPluginCore getInstance() {
         return pluginCore;
     }
 

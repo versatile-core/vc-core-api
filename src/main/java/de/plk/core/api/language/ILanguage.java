@@ -1,6 +1,7 @@
 package de.plk.core.api.language;
 
 import de.plk.core.api.language.message.IMessage;
+import de.plk.core.api.language.message.IMessageManager;
 import de.plk.core.api.utils.IManager;
 
 /**
@@ -22,6 +23,6 @@ public interface ILanguage {
      *
      * @return The message manager.
      */
-    IManager<IMessage> getMessageManager();
+    IMessageManager getMessageManager();
 
 }

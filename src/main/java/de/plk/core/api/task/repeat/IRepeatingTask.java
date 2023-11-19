@@ -39,17 +39,17 @@ public interface IRepeatingTask extends ITask<IRepeatingRunnable>, ITaskIdentifi
     void setRepeatingTicks(long ticks);
 
     /**
-     * Creates a repeating counter.
-     */
-    void createRepeatingCounter();
-
-    /**
-     * Creates a repeating counter.
-     *
-     * @see #createRepeatingCounter().
+     * Sets the beginning of a repeating counter.
      *
      * @param begin The beginning of the counter.
      */
-    void createRepeatingCounter(int begin);
+    void setRepeatingCounterBegin(int begin);
+
+    /**
+     * Get the repeating counter.
+     *
+     * @return The repeating counter.
+     */
+    IRepeatCounter getTheRepeatingCounter();
 
 }

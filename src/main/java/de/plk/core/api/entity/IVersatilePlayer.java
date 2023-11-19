@@ -2,6 +2,7 @@ package de.plk.core.api.entity;
 
 import de.plk.core.api.database.IModel;
 import de.plk.core.api.language.ILanguage;
+import de.plk.core.api.spigot.board.IScoreboard;
 import de.plk.core.api.spigot.skin.ISkin;
 
 /**
@@ -31,19 +32,5 @@ public interface IVersatilePlayer<T> extends IModel {
      * @param language The language.
      */
     void setLanguage(ILanguage language);
-
-    /**
-     * The players skin.
-     *
-     * @return The player skin.
-     */
-    ISkin getSkin();
-
-    /**
-     * Set the players skin.
-     *
-     * @param skin Players skin.
-     */
-    void setSkin(ISkin skin);
 
 }

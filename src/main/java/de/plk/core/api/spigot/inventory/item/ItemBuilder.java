@@ -4,6 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.material.MaterialData;
 
@@ -34,8 +35,12 @@ public class ItemBuilder {
      * @param amount   The item amount.
      */
     public ItemBuilder(Material material, int amount, short durability) {
-        this.itemStack = new ItemStack(material, amount, durability);
+        this.itemStack = new ItemStack(material, amount);
         this.itemMeta = itemStack.getItemMeta();
+
+        if (this.itemMeta != null) {
+            ((Damageable) this.itemMeta).setDamage(durability);
+        }
     }
 
     /**

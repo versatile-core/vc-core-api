@@ -5,10 +5,7 @@ import de.plk.core.api.config.IConfigManager;
 import de.plk.core.api.database.IDatabaseManager;
 import de.plk.core.api.language.ILanguage;
 import de.plk.core.api.log.ILogger;
-import de.plk.core.api.spigot.board.IScoreboardManager;
 import de.plk.core.api.spigot.game.IGame;
-import de.plk.core.api.spigot.inventory.IInventoryManager;
-import de.plk.core.api.task.ITaskManager;
 import de.plk.core.api.utils.IManager;
 
 /**
@@ -40,13 +37,6 @@ public interface IPluginCore {
     <T> IConfigManager<T> getConfigManager();
 
     /**
-     * Get the scoreboard manager.
-     *
-     * @return The scoreboard manager.
-     */
-    IScoreboardManager getScoreboardManager();
-
-    /**
      * Get the game manager.
      *
      * @return The game manager.
@@ -68,19 +58,5 @@ public interface IPluginCore {
      * @return The logger.
      */
     ILogger createLogger(String channel);
-
-    /**
-     * Get the inventory manager.
-     *
-     * @return The inventory manager.
-     */
-    IInventoryManager getInventoryManager();
-
-    /**
-     * Get the task manager.
-     *
-     * @return The task manager.
-     */
-    ITaskManager getTaskManager();
 
 }

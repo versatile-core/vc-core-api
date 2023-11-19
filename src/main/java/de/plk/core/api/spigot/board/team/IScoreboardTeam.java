@@ -2,14 +2,13 @@ package de.plk.core.api.spigot.board.team;
 
 import de.plk.core.api.spigot.board.IRow;
 import org.bukkit.ChatColor;
-import org.bukkit.event.Listener;
 
 /**
  * @author SoftwareBuilds
  * @since 05.08.2023 23:05
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IScoreboardTeam extends IRow, Listener {
+public interface IScoreboardTeam extends IRow {
 
     /**
      * Get the team identifier.
@@ -24,6 +23,14 @@ public interface IScoreboardTeam extends IRow, Listener {
      * @return The prefix.
      */
     String getPrefix();
+
+    /**
+     * Set the updated string.
+     *
+     * @param updatedString The updated string.
+     * @param values The values.
+     */
+    void update(String updatedString, Object... values);
 
     /**
      * Get the suffix in row.

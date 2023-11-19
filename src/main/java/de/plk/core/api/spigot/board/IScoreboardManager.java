@@ -1,8 +1,10 @@
 package de.plk.core.api.spigot.board;
 
-import de.plk.core.api.spigot.board.team.IScoreboardTeam;
 import de.plk.core.api.utils.IManager;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.DisplaySlot;
+
+import java.util.Optional;
 
 /**
  * @author SoftwareBuilds
@@ -20,12 +22,36 @@ public interface IScoreboardManager extends IManager<IScoreboard> {
     void sendScoreboard(Player player, IScoreboard scoreboard);
 
     /**
-     * Update the players scoreboard team entries.
+     * Creates a player scoreboard.
      *
-     * @param player     The player.
-     * @param scoreboard The scoreboard.
+     * @param scoreboardIdentifier The identifier of the scoreboard.
+     * @param displaySlot The type of the scoreboard.
+     * @param title The title of the scoreboard.
+     *
+     * @return The scoreboard.
      */
-    void updateScoreboard(Player player, IScoreboard scoreboard);
+    IScoreboard createScoreboard(
+        String scoreboardIdentifier,
+        DisplaySlot displaySlot,
+        String title
+    );
+
+    /**
+     * Get the scoreboard by the identifier.
+     *
+     * @param scoreboardIdentifier The identifier of the scoreboard.
+     *
+     * @return The scoreboard optional.
+     */
+    Optional<IScoreboard> getScoreboardByIdentifier(String scoreboardIdentifier);
+
+    /**
+     * Get the scoreboard by the identifier.
+
+     *
+     * @return The scoreboard optional.
+     */
+    Optional<IScoreboard> getScoreboardByPlayer(Player player);
 
     /**
      * Removes the scoreboard.
@@ -35,10 +61,8 @@ public interface IScoreboardManager extends IManager<IScoreboard> {
     void clearScoreboard(Player player);
 
     /**
-     * Get the scoreboard team manager.
-     *
-     * @return The scoreboard team manager.
+     * Register all scoreboard listeners.
      */
-    IManager<IScoreboardTeam> getScoreboardTeamManager();
+    void registerAllListeners();;
 
 }

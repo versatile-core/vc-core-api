@@ -1,6 +1,6 @@
 package de.plk.core.api.utils;
 
-import java.util.Set;
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -52,6 +52,6 @@ public interface IManager<E> {
      *
      * @return The elements.
      */
-    Set<E> getAll();
+    List<E> getAll();
 
 }

@@ -1,7 +1,7 @@
 package de.plk.core.api;
 
-import de.plk.core.api.plugin.IInstance;
-import de.plk.core.api.plugin.IPluginCore;
+import de.plk.core.api.plugin.IInstanceProxy;
+import de.plk.core.api.plugin.IProxyPluginCore;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;
 
@@ -15,7 +15,7 @@ public abstract class AbstractVersatileProxy extends Plugin {
     /**
      * The plugin core.
      */
-    private static IPluginCore pluginCore;
+    private static IProxyPluginCore pluginCore;
 
     /**
      * {@inheritDoc}
@@ -25,8 +25,7 @@ public abstract class AbstractVersatileProxy extends Plugin {
         PluginManager pluginManager = getProxy().getPluginManager();
         Plugin plugin = pluginManager.getPlugin("core");
 
-        if (plugin instanceof IInstance) {
-            IInstance<Plugin> instance = (IInstance<Plugin>) plugin;
+        if (plugin instanceof IInstanceProxy instance) {
             pluginCore = instance.createPluginCore(this);
         }
     }
@@ -36,7 +35,7 @@ public abstract class AbstractVersatileProxy extends Plugin {
      *
      * @return The instance of core plugin.
      */
-    public static IPluginCore getInstance() {
+    public static IProxyPluginCore getInstance() {
         return pluginCore;
     }
 
