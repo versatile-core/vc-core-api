@@ -79,7 +79,7 @@ public interface IInventoryManager extends IManager<IInventory> {
      * @return All registered active inventories.
      */
     @NotNull
-    Map<Player, IInventory> getAllActiveInventories();
+    Map<ISpigotPlayer, IInventory> getAllActiveInventories();
 
     /**
      * Get the inventory by the player.

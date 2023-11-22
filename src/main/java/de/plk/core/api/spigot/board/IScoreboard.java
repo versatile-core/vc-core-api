@@ -64,7 +64,9 @@ public interface IScoreboard extends IIdentifier, IListenable {
 
     /**
      * Set a blank line in the scoreboard.
+     *
+     * @param row The row where the blank line will be.
      */
-    void blankLine();
+    void blankLine(int row);
 
 }

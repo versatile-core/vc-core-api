@@ -1,8 +1,9 @@
 package de.plk.core.api.language;
 
 import de.plk.core.api.code.NotNull;
-import de.plk.core.api.language.message.IMessageManager;
+import de.plk.core.api.language.message.IMessage;
 import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.IManager;
 
 /**
  * @author SoftwareBuilds
@@ -25,6 +26,6 @@ public interface ILanguage extends IIdentifier {
      * @return The message manager.
      */
     @NotNull
-    IMessageManager getMessageManager();
+    IManager<IMessage> getMessageManager();
 
 }

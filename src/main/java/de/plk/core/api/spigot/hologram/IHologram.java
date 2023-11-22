@@ -23,6 +23,21 @@ public interface IHologram extends IIdentifier {
     Location getLocation();
 
     /**
+     * Get the rotation of the head.
+     *
+     * @return The rotation of the head.
+     */
+    @Nullable
+    Vector getHeadRotation();
+
+    /**
+     * Check if head rotation is animated.
+     *
+     * @return True if head rotation is animated.
+     */
+    boolean isAnimated();
+
+    /**
      * Set the hologram location.
      *
      * @param location Set the hologram location.
