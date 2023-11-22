@@ -4,7 +4,6 @@ import de.plk.core.api.code.NotNull;
 import de.plk.core.api.code.Nullable;
 import de.plk.core.api.entity.ISpigotPlayer;
 import de.plk.core.api.utils.IManager;
-import org.bukkit.entity.Player;
 
 import java.util.Map;
 import java.util.Optional;

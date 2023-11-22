@@ -61,6 +61,6 @@ public interface IScoreboardManager extends IManager<IScoreboard> {
     /**
      * Register all scoreboard listeners.
      */
-    void registerAllListeners();;
+    void registerAllListeners();
 
 }

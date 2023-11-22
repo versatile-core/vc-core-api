@@ -7,7 +7,7 @@ import de.plk.core.api.utils.IManager;
  * @since 09.08.2023 12:53
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface ICommandManager extends IManager<AbstractCommand> {
+public interface ICommandManager extends IManager<AbstractCommand<?>> {
 
     /**
      * Register all commands.
