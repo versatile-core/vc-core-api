@@ -1,33 +1,26 @@
 package de.plk.core.api.spigot.board;
 
-import de.plk.core.api.spigot.board.team.IScoreboardTeam;
+import de.plk.core.api.code.NotNull;
 import de.plk.core.api.spigot.board.team.ITeamBuilder;
-import de.plk.core.api.spigot.board.team.TeamIdentifierFilter;
-import org.bukkit.event.Listener;
+import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.IListenable;
 import org.bukkit.scoreboard.DisplaySlot;
 
 import java.util.Map;
-import java.util.Optional;
 
 /**
  * @author SoftwareBuilds
  * @since 05.08.2023 23:04
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IScoreboard {
-
-    /**
-     * Get the scoreboard identifier.
-     *
-     * @return The scoreboard identifier.
-     */
-    String getScoreboardIdentifier();
+public interface IScoreboard extends IIdentifier, IListenable {
 
     /**
      * Get the scoreboard type.
      *
      * @return The scoreboard type.
      */
+    @NotNull
     DisplaySlot getScoreboardType();
 
     /**
@@ -35,6 +28,7 @@ public interface IScoreboard {
      *
      * @return The scoreboard title.
      */
+    @NotNull
     String getScoreboardTitle();
 
     /**
@@ -42,44 +36,23 @@ public interface IScoreboard {
      *
      * @return The scoreboard rows.
      */
+    @NotNull
     Map<Integer, IRow> getRows();
-
-    /**
-     * Get a specific registered scoreboard team.
-     *
-     * @param identifierFilter The scoreboard team identifier.
-     *
-     * @return The scoreboard team optional.
-     */
-    Optional<IScoreboardTeam> getScoreboardTeam(TeamIdentifierFilter identifierFilter);
-
-    /**
-     * Get the scoreboard listener.
-     *
-     * @return The scoreboard listener.
-     */
-    Listener getScoreboardListener();
 
     /**
      * Get the team builder.
      *
      * @return The team builder.
      */
+    @NotNull
     ITeamBuilder getTeamBuilder();
-
-    /**
-     * Adding a scoreboard listener.
-     *
-     * @param listener The listener for this scoreboard.
-     */
-    void addScoreboardListener(Listener listener);
 
     /**
      * Set the scoreboard title.
      *
      * @param title The scoreboard title.
      */
-    void setScoreboardTitle(String title);
+    void setScoreboardTitle(@NotNull String title);
 
     /**
      * Adding a row the scoreboard.
@@ -87,6 +60,11 @@ public interface IScoreboard {
      * @param position The row position.
      * @param row The row to add.
      */
-    void addRow(int position, IRow row);
+    void addRow(@NotNull int position, @NotNull IRow row);
+
+    /**
+     * Set a blank line in the scoreboard.
+     */
+    void blankLine();
 
 }

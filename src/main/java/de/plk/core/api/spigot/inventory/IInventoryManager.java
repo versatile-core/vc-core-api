@@ -1,5 +1,8 @@
 package de.plk.core.api.spigot.inventory;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
+import de.plk.core.api.entity.ISpigotPlayer;
 import de.plk.core.api.utils.IManager;
 import org.bukkit.entity.Player;
 
@@ -16,10 +19,10 @@ public interface IInventoryManager extends IManager<IInventory> {
     /**
      * Opens the inventory for the player.
      *
-     * @param player    The player.
+     * @param spigotPlayer The player.
      * @param inventory The inventory.
      */
-    void openInventory(Player player, IInventory inventory);
+    void openInventory(@NotNull ISpigotPlayer spigotPlayer, @NotNull IInventory inventory);
 
     /**
      * Creates an inventory.
@@ -30,9 +33,13 @@ public interface IInventoryManager extends IManager<IInventory> {
      *
      * @return The inventory.
      */
+    @NotNull
     IInventory createInventory(
+            @NotNull
             String inventoryIdentifier,
+            @NotNull
             String title,
+            @Nullable
             int size
     );
 
@@ -49,9 +56,13 @@ public interface IInventoryManager extends IManager<IInventory> {
      * @return The inventory.
      */
     IInventory createInventory(
+            @NotNull
             String inventoryIdentifier,
+            @NotNull
             String title,
+            @Nullable
             int size,
+            @Nullable
             boolean fullUnclickable
     );
 
@@ -60,13 +71,14 @@ public interface IInventoryManager extends IManager<IInventory> {
      *
      * @param player The player.
      */
-    void closeInventory(Player player);
+    void closeInventory(@Nullable ISpigotPlayer player);
 
     /**
      * Get all the registered active inventories.
      *
      * @return All registered active inventories.
      */
+    @NotNull
     Map<Player, IInventory> getAllActiveInventories();
 
     /**
@@ -76,16 +88,8 @@ public interface IInventoryManager extends IManager<IInventory> {
      *
      * @return The inventory optional.
      */
-    Optional<IInventory> getInventoryByPlayer(Player player);
-
-    /**
-     * Get the inventory by the identifier.
-     *
-     * @param inventoryByIdFilter The identifier.
-     *
-     * @return The inventory optional.
-     */
-    Optional<IInventory> getInventoryByIdentifier(InventoryByIdFilter inventoryByIdFilter);
+    @NotNull
+    Optional<IInventory> getInventoryByPlayer(@Nullable ISpigotPlayer player);
 
     /**
      * Register all inventory listeners.

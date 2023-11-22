@@ -1,5 +1,7 @@
 package de.plk.core.api.spigot.game;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.spigot.game.state.IGameState;
 
 import java.util.HashSet;
@@ -15,11 +17,13 @@ public abstract class AbstractGame implements IGame {
     /**
      * The loaded game states.
      */
+    @NotNull
     protected final Set<IGameState> gameStates = new HashSet<>();
 
     /**
      * The current game state.
      */
+    @Nullable
     protected IGameState currentGameState;
 
     /**

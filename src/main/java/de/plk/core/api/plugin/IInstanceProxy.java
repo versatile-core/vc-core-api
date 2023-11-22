@@ -1,6 +1,7 @@
 package de.plk.core.api.plugin;
 
 import de.plk.core.api.AbstractVersatileProxy;
+import de.plk.core.api.code.NotNull;
 
 /**
  * @author SoftwareBuilds
@@ -16,6 +17,7 @@ public interface IInstanceProxy {
      *
      * @return The new plugin core for the other plugin.
      */
-    IProxyPluginCore createPluginCore(AbstractVersatileProxy plugin);
+    @NotNull
+    IProxyPluginCore createPluginCore(@NotNull AbstractVersatileProxy plugin);
 
 }

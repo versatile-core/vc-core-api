@@ -1,5 +1,7 @@
 package de.plk.core.api.task;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.task.delayed.IDelayedTask;
 import de.plk.core.api.task.repeat.IRepeatingTask;
 import de.plk.core.api.utils.IManager;
@@ -9,7 +11,7 @@ import de.plk.core.api.utils.IManager;
  * @since 05.11.2023 17:42
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface ITaskManager extends IManager<ITaskIdentifier> {
+public interface ITaskManager extends IManager<ITask<?>> {
 
     /**
      * Creates a delayed task.
@@ -19,7 +21,8 @@ public interface ITaskManager extends IManager<ITaskIdentifier> {
      *
      * @return The delayed task.
      */
-    IDelayedTask createDelayedTask(String taskName, long delayedTicks);
+    @NotNull
+    IDelayedTask createDelayedTask(@NotNull String taskName, @Nullable long delayedTicks);
 
     /**
      * Creates a repeating task.
@@ -30,6 +33,7 @@ public interface ITaskManager extends IManager<ITaskIdentifier> {
      *
      * @return The repeating task.
      */
-    IRepeatingTask createRepeatingTask(String taskName, long delayedTicks, long repeatingTicks);
+    @NotNull
+    IRepeatingTask createRepeatingTask(@NotNull String taskName, @Nullable long delayedTicks, @NotNull long repeatingTicks);
 
 }

@@ -1,11 +1,11 @@
 package de.plk.core.api.database;
 
+import de.plk.core.api.code.NotNull;
 import de.plk.core.api.database.meta.Column;
 import de.plk.core.api.database.meta.IModelInformation;
 import de.plk.core.api.database.meta.Relation;
 import de.plk.core.api.database.meta.Table;
 
-import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,8 @@ public interface IModel {
      *
      * @return The model information.
      */
-    static IModelInformation getModelInformation(Class<? extends IModel> modelClass) {
+    @NotNull
+    static IModelInformation getModelInformation(@NotNull Class<? extends IModel> modelClass) {
         return new IModelInformation() {
 
             /**
@@ -62,24 +63,6 @@ public interface IModel {
                 }
 
                 return relations;
-            }
-
-            /**
-             * {@inheritDoc}
-             */
-            @Override
-            public Field getFieldFromRelation(Relation relation) {
-                for (Field declaredField : modelClass.getDeclaredFields()) {
-                    if (declaredField.isAnnotationPresent(Relation.class)) {
-                        Relation annotationField = declaredField.getAnnotation(Relation.class);
-
-                        if (annotationField == relation) {
-                            return declaredField;
-                        }
-                    }
-                }
-
-                return null;
             }
         };
     }

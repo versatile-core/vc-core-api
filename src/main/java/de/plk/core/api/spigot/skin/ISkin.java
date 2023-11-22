@@ -1,5 +1,8 @@
 package de.plk.core.api.spigot.skin;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
+
 import java.util.UUID;
 
 /**
@@ -14,6 +17,7 @@ public interface ISkin {
      *
      * @return The uuid of players skin.
      */
+    @Nullable
     UUID getUuid();
 
     /**
@@ -21,6 +25,7 @@ public interface ISkin {
      *
      * @return Username.
      */
+    @Nullable
     String getName();
 
     /**
@@ -28,5 +33,7 @@ public interface ISkin {
      *
      * @return Skin texture.
      */
+    @NotNull
     String getTexture();
+
 }

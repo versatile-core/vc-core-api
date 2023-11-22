@@ -20,6 +20,11 @@ public enum DataType {
     /**
      * Column data type integer.
      */
-    INT
+    INT,
+
+    /**
+     * Column data type boolean.
+     */
+    BOOLEAN
 
 }

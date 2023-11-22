@@ -1,5 +1,7 @@
 package de.plk.core.api.spigot.inventory.item;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -21,11 +23,13 @@ public class ItemBuilder {
     /**
      * The item stack.
      */
+    @Nullable
     private final ItemStack itemStack;
 
     /**
      * The item meta.
      */
+    @Nullable
     private final ItemMeta itemMeta;
 
     /**
@@ -34,7 +38,7 @@ public class ItemBuilder {
      * @param material The item material.
      * @param amount   The item amount.
      */
-    public ItemBuilder(Material material, int amount, short durability) {
+    public ItemBuilder(@NotNull Material material, @NotNull int amount, @NotNull short durability) {
         this.itemStack = new ItemStack(material, amount);
         this.itemMeta = itemStack.getItemMeta();
 
@@ -50,7 +54,7 @@ public class ItemBuilder {
      *
      * @param material The item material.
      */
-    public ItemBuilder(Material material, int amount) {
+    public ItemBuilder(@NotNull Material material, @NotNull int amount) {
         this(material, amount, (short) 0);
     }
 
@@ -59,7 +63,7 @@ public class ItemBuilder {
      *
      * @param material The item material.
      */
-    public ItemBuilder(Material material) {
+    public ItemBuilder(@NotNull Material material) {
         this(material, 1, (short) 0);
     }
 
@@ -70,7 +74,8 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setName(String name) {
+    @NotNull
+    public ItemBuilder setName(@Nullable String name) {
         this.itemMeta.setDisplayName(name);
         return this;
     }
@@ -82,7 +87,8 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setMaterial(Material material) {
+    @NotNull
+    public ItemBuilder setMaterial(@NotNull Material material) {
         this.itemStack.setType(material);
         return this;
     }
@@ -94,7 +100,8 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setAmount(int amount) {
+    @NotNull
+    public ItemBuilder setAmount(@NotNull int amount) {
         this.itemStack.setAmount(amount);
         return this;
     }
@@ -106,7 +113,8 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setLore(String... lore) {
+    @NotNull
+    public ItemBuilder setLore(@Nullable String... lore) {
         this.itemMeta.setLore(Arrays.asList(lore));
         return this;
     }
@@ -118,8 +126,10 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setEnchantments(Map<Enchantment, Integer> enchantments) {
-        this.itemStack.addEnchantments(enchantments);
+    @NotNull
+    public ItemBuilder setEnchantments(@Nullable Map<Enchantment, Integer> enchantments) {
+        if (enchantments != null && !enchantments.isEmpty())
+            this.itemStack.addEnchantments(enchantments);
         return this;
     }
 
@@ -130,20 +140,9 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setEnchantment(Enchantment enchantment, int level) {
+    @NotNull
+    public ItemBuilder setEnchantment(@NotNull Enchantment enchantment, @NotNull int level) {
         this.itemStack.addEnchantment(enchantment, level);
-        return this;
-    }
-
-    /**
-     * Set the item material data.
-     *
-     * @param materialData The item material data.
-     *
-     * @return The item builder.
-     */
-    public ItemBuilder setMaterialData(MaterialData materialData) {
-        this.itemStack.setData(materialData);
         return this;
     }
 
@@ -154,8 +153,9 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setItemFlags(ItemFlag... itemFlags) {
-        this.itemMeta.addItemFlags(itemFlags);
+    public ItemBuilder setItemFlags(@Nullable ItemFlag... itemFlags) {
+        if (itemFlags != null && itemFlags.length > 0)
+            this.itemMeta.addItemFlags(itemFlags);
         return this;
     }
 
@@ -166,7 +166,8 @@ public class ItemBuilder {
      *
      * @return The item builder.
      */
-    public ItemBuilder setItemFlag(ItemFlag itemFlag) {
+    @NotNull
+    public ItemBuilder setItemFlag(@NotNull ItemFlag itemFlag) {
         this.itemMeta.addItemFlags(itemFlag);
         return this;
     }
@@ -180,7 +181,8 @@ public class ItemBuilder {
      *
      * @return The clickable item.
      */
-    public IClickableItem build(IClickEvent clickEvent) {
+    @NotNull
+    public IClickableItem build(@NotNull IClickEvent clickEvent) {
         return new IClickableItem() {
 
             /**
@@ -206,6 +208,7 @@ public class ItemBuilder {
      *
      * @return The item.
      */
+    @NotNull
     public IItem build() {
         itemStack.setItemMeta(itemMeta);
         return () -> itemStack;

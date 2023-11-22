@@ -1,5 +1,8 @@
 package de.plk.core.api.log;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
+
 /**
  * @author SoftwareBuilds
  * @since 05.08.2023 23:09
@@ -13,14 +16,14 @@ public interface ILogger {
      * @param type    The type of logging.
      * @param message The message to log.
      */
-    void log(LogType type, String message);
+    void log(@NotNull LogType type, @Nullable String message);
 
     /**
      * Logging messages with type info.
      *
      * @param message The message to log.
      */
-    default void info(String message) {
+    default void info(@Nullable String message) {
         log(LogType.INFO, message);
     }
 
@@ -29,7 +32,7 @@ public interface ILogger {
      *
      * @param message The message to log.
      */
-    default void warning(String message) {
+    default void warning(@Nullable String message) {
         log(LogType.WARNING, message);
     }
 
@@ -38,7 +41,7 @@ public interface ILogger {
      *
      * @param message The message to log.
      */
-    default void error(String message) {
+    default void error(@Nullable String message) {
         log(LogType.ERROR, message);
     }
 

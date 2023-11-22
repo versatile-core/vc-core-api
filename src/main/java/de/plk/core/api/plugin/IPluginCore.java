@@ -1,5 +1,7 @@
 package de.plk.core.api.plugin;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.command.ICommandManager;
 import de.plk.core.api.config.IConfigManager;
 import de.plk.core.api.database.IDatabaseManager;
@@ -20,6 +22,7 @@ public interface IPluginCore {
      *
      * @return The command manager.
      */
+    @NotNull
     ICommandManager getCommandManager();
 
     /**
@@ -27,6 +30,7 @@ public interface IPluginCore {
      *
      * @return The database manager.
      */
+    @NotNull
     IDatabaseManager getDatabaseManager();
 
     /**
@@ -34,6 +38,7 @@ public interface IPluginCore {
      *
      * @return The config manager.
      */
+    @NotNull
     <T> IConfigManager<T> getConfigManager();
 
     /**
@@ -41,6 +46,7 @@ public interface IPluginCore {
      *
      * @return The game manager.
      */
+    @NotNull
     IManager<IGame> getGameManager();
 
     /**
@@ -48,6 +54,7 @@ public interface IPluginCore {
      *
      * @return The language manager.
      */
+    @NotNull
     IManager<ILanguage> getLanguageManager();
 
     /**
@@ -57,6 +64,7 @@ public interface IPluginCore {
      *
      * @return The logger.
      */
-    ILogger createLogger(String channel);
+    @NotNull
+    ILogger createLogger(@Nullable String channel);
 
 }

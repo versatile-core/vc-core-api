@@ -1,5 +1,6 @@
 package de.plk.core.api;
 
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.plugin.IInstanceProxy;
 import de.plk.core.api.plugin.IProxyPluginCore;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -15,6 +16,7 @@ public abstract class AbstractVersatileProxy extends Plugin {
     /**
      * The plugin core.
      */
+    @Nullable
     private static IProxyPluginCore pluginCore;
 
     /**
@@ -35,6 +37,7 @@ public abstract class AbstractVersatileProxy extends Plugin {
      *
      * @return The instance of core plugin.
      */
+    @Nullable
     public static IProxyPluginCore getInstance() {
         return pluginCore;
     }

@@ -1,5 +1,8 @@
 package de.plk.core.api.task.repeat;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
+
 /**
  * @author SoftwareBuilds
  * @since 05.11.2023 18:06
@@ -16,23 +19,25 @@ public interface IRepeatCounter {
 
     /**
      * Sets ths current counter.
+     * <p>
+     * Default set of current counter is zero when null.
      *
      * @param counter The new counter value.
      */
-    void setCurrentCounter(int counter);
+    void setCurrentCounter(@Nullable int counter);
 
     /**
      * Increment the counter with a specific value.
      *
      * @param count The value to increment.
      */
-    void increment(int count);
+    void increment(@NotNull int count);
 
     /**
      * Decrement the counter with a specific value.
      *
      * @param count The value to decrement.
      */
-    void decrement(int count);
+    void decrement(@NotNull int count);
 
 }

@@ -1,7 +1,9 @@
 package de.plk.core.api.command;
 
+import de.plk.core.api.AbstractVersatileSpigot;
+import de.plk.core.api.code.NotNull;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.command.PluginCommand;
 
 /**
  * @author SoftwareBuilds
@@ -13,14 +15,15 @@ public abstract class AbstractSpigotCommand extends AbstractCommand<CommandSende
     /**
      * The spigot plugin instance.
      */
-    private final JavaPlugin plugin;
+    @NotNull
+    private final AbstractVersatileSpigot plugin;
 
     /**
      * Construct the abstract spigot command instance from subclass.
      *
      * @param plugin The spigot plugin instance.
      */
-    public AbstractSpigotCommand(JavaPlugin plugin) {
+    public AbstractSpigotCommand(@NotNull AbstractVersatileSpigot plugin) {
         this.plugin = plugin;
     }
 
@@ -28,9 +31,13 @@ public abstract class AbstractSpigotCommand extends AbstractCommand<CommandSende
      * {@inheritDoc}
      */
     public void register() {
-        plugin.getCommand(getCommandInfo().name()).setExecutor(
-                (commandSender, command, s, strings) -> executeCommand(commandSender, strings)
-        );
+        final PluginCommand pluginCommand = plugin.getCommand(getCommandInfo().name());
+
+        if (pluginCommand != null) {
+            pluginCommand.setExecutor(
+                    (commandSender, command, s, strings) -> executeCommand(commandSender, strings)
+            );
+        }
     }
 
 }

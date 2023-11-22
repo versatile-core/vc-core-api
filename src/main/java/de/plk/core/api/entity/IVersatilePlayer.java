@@ -1,9 +1,9 @@
 package de.plk.core.api.entity;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.database.IModel;
 import de.plk.core.api.language.ILanguage;
-import de.plk.core.api.spigot.board.IScoreboard;
-import de.plk.core.api.spigot.skin.ISkin;
 
 /**
  * @author SoftwareBuilds
@@ -17,6 +17,7 @@ public interface IVersatilePlayer<T> extends IModel {
      *
      * @return Game player.
      */
+    @NotNull
     T getPlayer();
 
     /**
@@ -24,6 +25,7 @@ public interface IVersatilePlayer<T> extends IModel {
      *
      * @return The language.
      */
+    @NotNull
     ILanguage getLanguage();
 
     /**
@@ -31,6 +33,6 @@ public interface IVersatilePlayer<T> extends IModel {
      *
      * @param language The language.
      */
-    void setLanguage(ILanguage language);
+    void setLanguage(@Nullable ILanguage language);
 
 }

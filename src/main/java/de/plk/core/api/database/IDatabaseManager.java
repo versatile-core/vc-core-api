@@ -1,5 +1,7 @@
 package de.plk.core.api.database;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.database.query.IQuery;
 
 import java.sql.Connection;
@@ -17,6 +19,7 @@ public interface IDatabaseManager {
      *
      * @return The database connection.
      */
+    @Nullable
     Connection getConnection();
 
     /**
@@ -25,16 +28,16 @@ public interface IDatabaseManager {
     void connect();
 
     /**
+     * Disconnect the database connection.
+     */
+    void disconnect();
+
+    /**
      * Checks if database is connected.
      *
      * @return True if database is connected.
      */
     boolean isConnected();
-
-    /**
-     * Disconnect the database connection.
-     */
-    void disconnect();
 
     /**
      * Run a synchronized query.
@@ -45,7 +48,8 @@ public interface IDatabaseManager {
      *
      * @param <M> The model type specification.
      */
-    <M extends IModel> M runSync(IQuery<M> query);
+    @NotNull
+    <M extends IModel> M runSync(@NotNull IQuery<M> query);
 
     /**
      * Run an asynchronized query.
@@ -58,7 +62,8 @@ public interface IDatabaseManager {
      * 
      * @param <M> The model type specification.
      */
-    default <M extends IModel> CompletableFuture<M> runAsync(IQuery<M> query) {
+    @NotNull
+    default <M extends IModel> CompletableFuture<M> runAsync(@NotNull IQuery<M> query) {
         return CompletableFuture.supplyAsync(() -> runSync(query));
     }
 

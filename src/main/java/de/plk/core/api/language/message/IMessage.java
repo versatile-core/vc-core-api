@@ -1,18 +1,14 @@
 package de.plk.core.api.language.message;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.utils.IIdentifier;
+
 /**
  * @author SoftwareBuilds
  * @since 05.08.2023 23:14
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IMessage {
-
-    /**
-     * The config key for the message value.
-     *
-     * @return The config key.
-     */
-    String getKey();
+public interface IMessage extends IIdentifier {
 
     /**
      * Replace the message arguments with wished values.
@@ -21,7 +17,8 @@ public interface IMessage {
      *
      * @return The replaced message.
      */
-    default String getWithReplace(Object... replacements) {
+    @NotNull
+    default String getWithReplace(@NotNull Object... replacements) {
         return String.format(getMessage(), replacements);
     }
 
@@ -30,6 +27,7 @@ public interface IMessage {
      *
      * @return The message.
      */
+    @NotNull
     String getMessage();
 
 }

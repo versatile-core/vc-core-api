@@ -1,5 +1,6 @@
 package de.plk.core.api.database.query;
 
+import de.plk.core.api.code.NotNull;
 import de.plk.core.api.database.IModel;
 
 /**
@@ -15,6 +16,7 @@ public interface IQuery<M extends IModel> {
      *
      * @return Type of command.
      */
+    @NotNull
     CommandType getCommandType();
 
     /**
@@ -22,6 +24,7 @@ public interface IQuery<M extends IModel> {
      *
      * @return The built sql command.
      */
+    @NotNull
     String getCommand();
 
     /**
@@ -41,6 +44,7 @@ public interface IQuery<M extends IModel> {
      *
      * @return Resulted model.
      */
+    @NotNull
     M getResult();
 
 }

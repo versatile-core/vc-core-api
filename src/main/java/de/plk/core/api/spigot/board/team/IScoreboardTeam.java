@@ -1,6 +1,9 @@
 package de.plk.core.api.spigot.board.team;
 
+import de.plk.core.api.code.NotNull;
 import de.plk.core.api.spigot.board.IRow;
+import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.IListenable;
 import org.bukkit.ChatColor;
 
 /**
@@ -8,20 +11,14 @@ import org.bukkit.ChatColor;
  * @since 05.08.2023 23:05
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IScoreboardTeam extends IRow {
-
-    /**
-     * Get the team identifier.
-     *
-     * @return The identifier.
-     */
-    String getTeamIdentifier();
+public interface IScoreboardTeam extends IRow, IIdentifier, IListenable {
 
     /**
      * Get the prefix in row.
      *
      * @return The prefix.
      */
+    @NotNull
     String getPrefix();
 
     /**
@@ -30,13 +27,14 @@ public interface IScoreboardTeam extends IRow {
      * @param updatedString The updated string.
      * @param values The values.
      */
-    void update(String updatedString, Object... values);
+    void update(@NotNull String updatedString, @NotNull Object... values);
 
     /**
      * Get the suffix in row.
      *
      * @return The suffix.
      */
+    @NotNull
     String getSuffix();
 
     /**
@@ -44,6 +42,7 @@ public interface IScoreboardTeam extends IRow {
      *
      * @return The entry as non see entry.
      */
+    @NotNull
     ChatColor getEntry();
 
 }

@@ -1,5 +1,6 @@
 package de.plk.core.api.spigot.inventory.item;
 
+import de.plk.core.api.code.Nullable;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 /**
@@ -15,6 +16,6 @@ public interface IClickEvent {
      *
      * @param event The spigot click event.
      */
-    void onClick(InventoryClickEvent event);
+    void onClick(@Nullable InventoryClickEvent event);
 
 }

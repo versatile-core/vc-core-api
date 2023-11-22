@@ -1,5 +1,7 @@
 package de.plk.core.api.spigot.hologram;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.utils.IManager;
 import org.bukkit.Location;
 
@@ -20,27 +22,23 @@ public interface IHologramManager extends IManager<IHologram> {
      *
      * @return The hologram.
      */
+    @NotNull
     IHologram createHologram(
+            @NotNull
             String hologramIdentifier,
+            @NotNull
             String[] lines,
+            @Nullable
             Location location,
+            @NotNull
             boolean small
     );
-
-    /**
-     * Get the hologram by identifier.
-     *
-     * @param hologramIdentifierFilter The identifier filter.
-     *
-     * @return The hologram.
-     */
-    IHologram getHologramById(HologramIdentifierFilter hologramIdentifierFilter);
 
     /**
      * Spawn the entity hologram.
      *
      * @param hologram The hologram to spawn.
      */
-    void summon(IHologram hologram);
+    void summon(@NotNull IHologram hologram);
 
 }

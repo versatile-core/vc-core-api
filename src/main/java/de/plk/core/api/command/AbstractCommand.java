@@ -1,11 +1,14 @@
 package de.plk.core.api.command;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.utils.IIdentifier;
+
 /**
  * @author SoftwareBuilds
  * @since 10.08.2023 10:45
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public abstract class AbstractCommand<E> {
+public abstract class AbstractCommand<E> implements IIdentifier {
 
     /**
      * The method need to implement in the other plugins.
@@ -15,14 +18,14 @@ public abstract class AbstractCommand<E> {
      *
      * @return True if the command runs successfully.
      */
-    public abstract boolean onSpicyCommand(E executor, String[] args);
+    public abstract boolean onSpicyCommand(@NotNull E executor, String[] args);
 
     /**
      * Wraps the spicy command with restrictions.
      *
      * @see #onSpicyCommand(Object, String[]).
      */
-    public boolean executeCommand(E executor, String[] args) {
+    public boolean executeCommand(@NotNull E executor, String[] args) {
         final CommandInfo commandInfo = getCommandInfo();
 
         // Checks whether the arguments fit within the limits of the specified command length.
@@ -50,11 +53,19 @@ public abstract class AbstractCommand<E> {
      *
      * @param executor The executor.
      */
-    public abstract void sendHelp(E executor);
+    public abstract void sendHelp(@NotNull E executor);
 
     /**
      * Register the command to the plugin.
      */
     public abstract void register();
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getIdentifier() {
+        final CommandInfo commandInfo = getCommandInfo();
+        return commandInfo.name();
+    }
 }

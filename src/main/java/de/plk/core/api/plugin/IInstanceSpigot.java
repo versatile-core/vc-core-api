@@ -1,6 +1,7 @@
 package de.plk.core.api.plugin;
 
 import de.plk.core.api.AbstractVersatileSpigot;
+import de.plk.core.api.code.NotNull;
 
 /**
  * @author SoftwareBuilds
@@ -16,6 +17,7 @@ public interface IInstanceSpigot {
      *
      * @return The new plugin core for the other plugin.
      */
-    ISpigotPluginCore createPluginCore(AbstractVersatileSpigot plugin);
+    @NotNull
+    ISpigotPluginCore createPluginCore(@NotNull AbstractVersatileSpigot plugin);
 
 }

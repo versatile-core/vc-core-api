@@ -1,5 +1,6 @@
 package de.plk.core.api;
 
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.plugin.IInstanceSpigot;
 import de.plk.core.api.plugin.ISpigotPluginCore;
 import org.bukkit.Bukkit;
@@ -17,6 +18,7 @@ public abstract class AbstractVersatileSpigot extends JavaPlugin {
     /**
      * The plugin core.
      */
+    @Nullable
     private static ISpigotPluginCore pluginCore;
 
     /**
@@ -37,6 +39,7 @@ public abstract class AbstractVersatileSpigot extends JavaPlugin {
      *
      * @return The instance of core plugin.
      */
+    @Nullable
     public static ISpigotPluginCore getInstance() {
         return pluginCore;
     }

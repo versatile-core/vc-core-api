@@ -1,5 +1,7 @@
 package de.plk.core.api.entity;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.spigot.board.IScoreboard;
 import de.plk.core.api.spigot.skin.ISkin;
 import org.bukkit.entity.Player;
@@ -16,6 +18,7 @@ public interface ISpigotPlayer extends IVersatilePlayer<Player> {
      *
      * @return The player skin.
      */
+    @NotNull
     ISkin getSkin();
 
     /**
@@ -23,13 +26,14 @@ public interface ISpigotPlayer extends IVersatilePlayer<Player> {
      *
      * @param skin Players skin.
      */
-    void setSkin(ISkin skin);
+    void setSkin(@Nullable ISkin skin);
 
     /**
      * Get the active scoreboard of the player.
      *
      * @return The active scoreboard.
      */
+    @Nullable
     IScoreboard getScoreboard();
 
 }

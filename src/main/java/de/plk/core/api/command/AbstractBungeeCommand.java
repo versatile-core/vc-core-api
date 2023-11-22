@@ -1,8 +1,9 @@
 package de.plk.core.api.command;
 
+import de.plk.core.api.AbstractVersatileProxy;
+import de.plk.core.api.code.NotNull;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.plugin.Command;
-import net.md_5.bungee.api.plugin.Plugin;
 
 /**
  * @author SoftwareBuilds
@@ -14,14 +15,15 @@ public abstract class AbstractBungeeCommand extends AbstractCommand<CommandSende
     /**
      * The bungee plugin instance.
      */
-    private final Plugin plugin;
+    @NotNull
+    private final AbstractVersatileProxy plugin;
 
     /**
      * Creates the abstract bungee command instance from subclass.
      *
       * @param plugin The bungee plugin instance.
      */
-    public AbstractBungeeCommand(Plugin plugin) {
+    public AbstractBungeeCommand(@NotNull AbstractVersatileProxy plugin) {
         this.plugin = plugin;
     }
 

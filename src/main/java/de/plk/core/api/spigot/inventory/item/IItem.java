@@ -1,5 +1,6 @@
 package de.plk.core.api.spigot.inventory.item;
 
+import de.plk.core.api.code.NotNull;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -15,6 +16,7 @@ public interface IItem {
      *
      * @return The item stack.
      */
+    @NotNull
     ItemStack getItemStack();
 
 }

@@ -1,5 +1,7 @@
 package de.plk.core.api.database.query;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import de.plk.core.api.database.IModel;
 import de.plk.core.api.database.meta.Column;
 
@@ -12,12 +14,15 @@ public interface IQueryBuilder<M extends IModel> {
 
     /**
      * Set the type of command.
+     * <p>
+     * The default command type is SELECT.
      *
      * @param type The command type.
      *
      * @return The query builder.
      */
-    IQueryBuilder<M> setCommandType(CommandType type);
+    @NotNull
+    IQueryBuilder<M> setCommandType(@Nullable CommandType type);
 
     /**
      * The where clause added to the command.
@@ -30,7 +35,8 @@ public interface IQueryBuilder<M extends IModel> {
      *
      * @param <V> The value type.
      */
-    <V> IQueryBuilder<M> where(Column column, Operand operand, V needle);
+    @NotNull
+    <V> IQueryBuilder<M> where(@NotNull Column column, @Nullable Operand operand, @NotNull V needle);
 
     /**
      * The or where clause added to the command.
@@ -43,7 +49,8 @@ public interface IQueryBuilder<M extends IModel> {
      *
      * @param <V> The value type.
      */
-    <V> IQueryBuilder<M> orWhere(Column column, Operand operand, V needle);
+    @NotNull
+    <V> IQueryBuilder<M> orWhere(@NotNull Column column, @Nullable Operand operand, @NotNull V needle);
 
     /**
      * The and where clause added to the command.
@@ -56,15 +63,20 @@ public interface IQueryBuilder<M extends IModel> {
      *
      * @param <V> The value type.
      */
-    <V> IQueryBuilder<M> andWhere(Column column, Operand operand, V needle);
+    @NotNull
+    <V> IQueryBuilder<M> andWhere(@NotNull Column column, @Nullable Operand operand, @NotNull V needle);
 
     /**
      * Build the model query.
      *
      * @return Model query.
      */
+    @NotNull
     IQuery<M> build();
 
+    /**
+     * The enum with different options to check the values.
+     */
     enum Operand {
 
         /**

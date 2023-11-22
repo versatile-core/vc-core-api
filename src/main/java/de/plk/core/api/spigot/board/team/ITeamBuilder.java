@@ -1,5 +1,7 @@
 package de.plk.core.api.spigot.board.team;
 
+import de.plk.core.api.code.NotNull;
+import de.plk.core.api.code.Nullable;
 import org.bukkit.ChatColor;
 
 /**
@@ -16,7 +18,8 @@ public interface ITeamBuilder {
      *
      * @return The team builder.
      */
-    ITeamBuilder setPrefix(String prefix);
+    @NotNull
+    ITeamBuilder setPrefix(@Nullable String prefix);
 
     /**
      * Set the suffix of a scoreboard team.
@@ -25,7 +28,8 @@ public interface ITeamBuilder {
      *
      * @return The team builder.
      */
-    ITeamBuilder setSuffix(String suffix);
+    @NotNull
+    ITeamBuilder setSuffix(@Nullable String suffix);
 
     /**
      * Set the identifier of a scoreboard team.
@@ -34,7 +38,8 @@ public interface ITeamBuilder {
      *
      * @return The team builder.
      */
-    ITeamBuilder setIdentifier(String identifier);
+    @NotNull
+    ITeamBuilder setIdentifier(@NotNull String identifier);
 
     /**
      * Set the update string of a scoreboard team.
@@ -43,7 +48,8 @@ public interface ITeamBuilder {
      *
      * @return The team builder.
      */
-    ITeamBuilder setUpdatedString(String updatedString, Object... values);
+    @NotNull
+    ITeamBuilder setUpdatedString(@NotNull String updatedString, @NotNull Object... values);
 
     /**
      * Set the scoreboard team entry.
@@ -51,13 +57,15 @@ public interface ITeamBuilder {
      * @param color The scoreboard team entry.
      * @return The team builder.
      */
-    ITeamBuilder setEntry(ChatColor color);
+    @NotNull
+    ITeamBuilder setEntry(@NotNull ChatColor color);
 
     /**
      * The built scoreboard team.
      *
      * @return The built scoreboard team.
      */
+    @NotNull
     IScoreboardTeam build();
 
 }

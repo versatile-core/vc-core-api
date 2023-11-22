@@ -1,5 +1,6 @@
 package de.plk.core.api.language.message;
 
+import de.plk.core.api.code.NotNull;
 import de.plk.core.api.utils.IManager;
 
 import java.io.File;
@@ -16,6 +17,6 @@ public interface IMessageManager extends IManager<IMessage> {
      *
      * @param file The file with messages.
      */
-    void attachMessages(File file);
+    void attachMessages(@NotNull File file);
 
 }

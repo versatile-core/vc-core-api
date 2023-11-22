@@ -1,5 +1,6 @@
 package de.plk.core.api.plugin;
 
+import de.plk.core.api.code.NotNull;
 import de.plk.core.api.spigot.board.IScoreboardManager;
 import de.plk.core.api.spigot.hologram.IHologramManager;
 import de.plk.core.api.spigot.inventory.IInventoryManager;
@@ -17,6 +18,7 @@ public interface ISpigotPluginCore extends IPluginCore {
      *
      * @return The scoreboard manager.
      */
+    @NotNull
     IScoreboardManager getScoreboardManager();
 
     /**
@@ -24,6 +26,7 @@ public interface ISpigotPluginCore extends IPluginCore {
      *
      * @return The inventory manager.
      */
+    @NotNull
     IInventoryManager getInventoryManager();
 
     /**
@@ -31,6 +34,7 @@ public interface ISpigotPluginCore extends IPluginCore {
      *
      * @return The task manager.
      */
+    @NotNull
     ITaskManager getTaskManager();
 
     /**
@@ -38,6 +42,7 @@ public interface ISpigotPluginCore extends IPluginCore {
      *
      * @return The hologram manager.
      */
+    @NotNull
     IHologramManager getHologramManager();
 
 }
