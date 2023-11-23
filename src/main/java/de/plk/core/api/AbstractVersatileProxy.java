@@ -1,7 +1,7 @@
 package de.plk.core.api;
 
 import de.plk.core.api.code.Nullable;
-import de.plk.core.api.plugin.IInstanceProxy;
+import de.plk.core.api.plugin.instance.IInstanceProxy;
 import de.plk.core.api.plugin.IProxyPluginCore;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.PluginManager;

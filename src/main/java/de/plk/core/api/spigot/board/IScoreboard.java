@@ -2,7 +2,7 @@ package de.plk.core.api.spigot.board;
 
 import de.plk.core.api.code.NotNull;
 import de.plk.core.api.spigot.board.team.ITeamBuilder;
-import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.id.IIdentifier;
 import de.plk.core.api.utils.IListenable;
 import org.bukkit.scoreboard.DisplaySlot;
 

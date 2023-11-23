@@ -2,7 +2,7 @@ package de.plk.core.api.language;
 
 import de.plk.core.api.code.NotNull;
 import de.plk.core.api.language.message.IMessage;
-import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.id.IIdentifier;
 import de.plk.core.api.utils.IManager;
 
 /**

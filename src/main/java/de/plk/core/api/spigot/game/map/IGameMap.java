@@ -2,6 +2,7 @@ package de.plk.core.api.spigot.game.map;
 
 import de.plk.core.api.code.NotNull;
 import de.plk.core.api.spigot.game.team.IGameTeam;
+import de.plk.core.api.utils.id.IIdentifier;
 import org.bukkit.Location;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * @since 22.11.2023 20:05
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
-public interface IGameMap {
+public interface IGameMap extends IIdentifier {
 
     /**
      * Get the title of the map.

@@ -3,7 +3,7 @@ package de.plk.core.api.spigot.game.team;
 import de.plk.core.api.code.NotNull;
 import de.plk.core.api.code.Nullable;
 import de.plk.core.api.entity.ISpigotPlayer;
-import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.id.IIdentifier;
 import org.bukkit.ChatColor;
 
 import java.util.List;

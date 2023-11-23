@@ -1,7 +1,7 @@
 package de.plk.core.api;
 
 import de.plk.core.api.code.Nullable;
-import de.plk.core.api.plugin.IInstanceSpigot;
+import de.plk.core.api.plugin.instance.IInstanceSpigot;
 import de.plk.core.api.plugin.ISpigotPluginCore;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;

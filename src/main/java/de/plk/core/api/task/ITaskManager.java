@@ -18,22 +18,33 @@ public interface ITaskManager extends IManager<ITask<?>> {
      *
      * @param taskName The registration name for the task.
      * @param delayedTicks The delayed ticks of the task.
+     * @param async Run the scheduler async or sync.
      *
      * @return The delayed task.
      */
     @NotNull
-    IDelayedTask createDelayedTask(@NotNull String taskName, @Nullable long delayedTicks);
+    IDelayedTask createDelayedTask(
+            @NotNull String taskName,
+            @Nullable long delayedTicks,
+            boolean async
+    );
 
     /**
      * Creates a repeating task.
      *
-     * @param taskName       The registration name for the task.
-     * @param delayedTicks   The delayed ticks of the task.
+     * @param taskName The registration name for the task.
+     * @param delayedTicks The delayed ticks of the task.
      * @param repeatingTicks The repeating ticks of the task.
+     * @param async Run the scheduler async or sync.
      *
      * @return The repeating task.
      */
     @NotNull
-    IRepeatingTask createRepeatingTask(@NotNull String taskName, @Nullable long delayedTicks, @NotNull long repeatingTicks);
+    IRepeatingTask createRepeatingTask(
+            @NotNull String taskName,
+            @Nullable long delayedTicks,
+            @NotNull long repeatingTicks,
+            boolean async
+    );
 
 }

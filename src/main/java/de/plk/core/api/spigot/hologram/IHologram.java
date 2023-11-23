@@ -2,7 +2,7 @@ package de.plk.core.api.spigot.hologram;
 
 import de.plk.core.api.code.NotNull;
 import de.plk.core.api.code.Nullable;
-import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.id.IIdentifier;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;

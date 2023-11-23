@@ -33,12 +33,9 @@ public interface IScoreboardManager extends IManager<IScoreboard> {
      * @return The scoreboard.
      */
     IScoreboard createScoreboard(
-            @NotNull
-            String scoreboardIdentifier,
-            @NotNull
-            DisplaySlot displaySlot,
-            @NotNull
-            String title
+            @NotNull String scoreboardIdentifier,
+            @NotNull DisplaySlot displaySlot,
+            @NotNull String title
     );
 
     /**

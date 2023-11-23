@@ -3,7 +3,7 @@ package de.plk.core.api.spigot.game;
 import de.plk.core.api.code.NotNull;
 import de.plk.core.api.code.Nullable;
 import de.plk.core.api.spigot.game.state.IGameState;
-import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.id.IIdentifier;
 
 import java.util.Set;
 

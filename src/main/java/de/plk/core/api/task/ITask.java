@@ -1,7 +1,7 @@
 package de.plk.core.api.task;
 
 import de.plk.core.api.code.NotNull;
-import de.plk.core.api.utils.IIdentifier;
+import de.plk.core.api.utils.id.IIdentifier;
 import org.bukkit.scheduler.BukkitTask;
 
 /**
@@ -27,6 +27,13 @@ public interface ITask<T> extends IIdentifier {
      * Stopping of the scheduler.
      */
     void stop();
+
+    /**
+     * Check if the scheduler is an async one.
+     *
+     * @return True if the scheduler is async.
+     */
+    boolean isAsync();
 
     /**
      * Get the task.

@@ -1,4 +1,4 @@
-package de.plk.core.api.utils;
+package de.plk.core.api.utils.id;
 
 import de.plk.core.api.code.NotNull;
 

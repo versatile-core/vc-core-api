@@ -6,4 +6,5 @@ package de.plk.core.api.spigot.game.map;
  * Copyright © 2023 | SoftwareBuilds | All rights reserved.
  */
 public interface IKeyableEnum {
+
 }
