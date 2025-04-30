@@ -24,9 +24,9 @@ public interface ITaskManager extends IManager<ITask<?>> {
      */
     @NotNull
     IDelayedTask createDelayedTask(
-            @NotNull String taskName,
-            @Nullable long delayedTicks,
-            boolean async
+        @NotNull String taskName,
+        @Nullable long delayedTicks,
+        boolean async
     );
 
     /**
@@ -41,10 +41,10 @@ public interface ITaskManager extends IManager<ITask<?>> {
      */
     @NotNull
     IRepeatingTask createRepeatingTask(
-            @NotNull String taskName,
-            @Nullable long delayedTicks,
-            @NotNull long repeatingTicks,
-            boolean async
+        @NotNull String taskName,
+        @Nullable long delayedTicks,
+        @NotNull long repeatingTicks,
+        boolean async
     );
 
 }

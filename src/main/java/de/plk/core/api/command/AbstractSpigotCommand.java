@@ -31,11 +31,13 @@ public abstract class AbstractSpigotCommand extends AbstractCommand<CommandSende
      * {@inheritDoc}
      */
     public void register() {
-        final PluginCommand pluginCommand = plugin.getCommand(getCommandInfo().name());
+        final PluginCommand pluginCommand = plugin.getCommand(
+            getCommandInfo().name()
+        );
 
         if (pluginCommand != null) {
             pluginCommand.setExecutor(
-                    (commandSender, command, s, strings) -> executeCommand(commandSender, strings)
+                (commandSender, command, label, strings) -> executeCommand(commandSender, strings)
             );
         }
     }

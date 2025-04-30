@@ -34,12 +34,9 @@ public interface IInventoryManager extends IManager<IInventory> {
      */
     @NotNull
     IInventory createInventory(
-            @NotNull
-            String inventoryIdentifier,
-            @NotNull
-            String title,
-            @Nullable
-            int size
+        @NotNull String inventoryIdentifier,
+        @NotNull String title,
+        @Nullable int size
     );
 
     /**
@@ -55,14 +52,10 @@ public interface IInventoryManager extends IManager<IInventory> {
      * @return The inventory.
      */
     IInventory createInventory(
-            @NotNull
-            String inventoryIdentifier,
-            @NotNull
-            String title,
-            @Nullable
-            int size,
-            @Nullable
-            boolean fullUnclickable
+        @NotNull String inventoryIdentifier,
+        @NotNull String title,
+        @Nullable int size,
+        @Nullable boolean fullUnclickable
     );
 
     /**

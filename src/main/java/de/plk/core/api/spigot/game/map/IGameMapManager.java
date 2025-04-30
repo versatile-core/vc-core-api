@@ -21,9 +21,9 @@ public interface IGameMapManager extends IManager<IGameMap> {
      * @return The created game map.
      */
     IGameMap createMap(
-            @NotNull String mapIdentifier,
-            @Nullable String builder,
-            int teamAmount
+        @NotNull String mapIdentifier,
+        @Nullable String builder,
+        int teamAmount
     );
 
 }

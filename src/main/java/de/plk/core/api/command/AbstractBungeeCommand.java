@@ -32,16 +32,17 @@ public abstract class AbstractBungeeCommand extends AbstractCommand<CommandSende
      */
     @Override
     public void register() {
-        plugin.getProxy().getPluginManager().registerCommand(plugin, new Command(
-                    getCommandInfo().name(),
-                    getCommandInfo().permission(),
-                    getCommandInfo().aliases()
-                ) {
-                    @Override
-                    public void execute(CommandSender commandSender, String[] strings) {
-                        executeCommand(commandSender, strings);
-                    }
+        plugin.getProxy().getPluginManager().registerCommand(plugin, 
+            new Command(
+                getCommandInfo().name(),
+                getCommandInfo().permission(),
+                getCommandInfo().aliases()
+            ) {
+                @Override
+                public void execute(CommandSender commandSender, String[] strings) {
+                    executeCommand(commandSender, strings);
                 }
+            }
         );
     }
 

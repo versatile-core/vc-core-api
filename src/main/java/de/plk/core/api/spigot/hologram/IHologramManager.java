@@ -24,14 +24,10 @@ public interface IHologramManager extends IManager<IHologram> {
      */
     @NotNull
     IHologram createHologram(
-            @NotNull
-            String hologramIdentifier,
-            @NotNull
-            String[] lines,
-            @Nullable
-            Location location,
-            @NotNull
-            boolean small
+        @NotNull String hologramIdentifier,
+        @NotNull String[] lines,
+        @Nullable Location location,
+        @NotNull boolean small
     );
 
     /**

@@ -18,19 +18,19 @@ public abstract class AbstractCommand<E> implements IIdentifier {
      *
      * @return True if the command runs successfully.
      */
-    public abstract boolean onSpicyCommand(@NotNull E executor, String[] args);
+    public abstract boolean onVersatileCommand(@NotNull E executor, String[] args);
 
     /**
      * Wraps the spicy command with restrictions.
      *
-     * @see #onSpicyCommand(Object, String[]).
+     * @see #onVersatileCommand(Object, String[]).
      */
     public boolean executeCommand(@NotNull E executor, String[] args) {
         final CommandInfo commandInfo = getCommandInfo();
 
         // Checks whether the arguments fit within the limits of the specified command length.
         if (args.length >= commandInfo.minArgs() && args.length <= commandInfo.maxArgs()) {
-            return onSpicyCommand(executor, args);
+            return onVersatileCommand(executor, args);
         } else {
             sendHelp(executor);
             return false;
@@ -65,7 +65,6 @@ public abstract class AbstractCommand<E> implements IIdentifier {
      */
     @Override
     public String getIdentifier() {
-        final CommandInfo commandInfo = getCommandInfo();
-        return commandInfo.name();
+       return getCommandInfo().name(); 
     }
 }
